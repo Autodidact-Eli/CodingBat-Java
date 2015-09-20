@@ -1,5 +1,14 @@
 package com.codingbat.results;
 
+/**
+ *	/workspace/Codingbat/src
+ *
+ *	After making changes
+ *	git add .
+ *	git commit -m [comments here]
+ *	git push -u origin master
+ */
+
 public class Warmup_1 {
 
 	public boolean sleepIn(boolean weekday, boolean vacation) {
