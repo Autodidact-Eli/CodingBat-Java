@@ -39,7 +39,7 @@ public class Warmup_1 {
 		}
 		return false;
 	}
-
+ 
 	public boolean makes10(int a, int b) {
 		return a == 10 || b == 10 || (a+b) == 10;
 	}
@@ -90,22 +90,4 @@ public class Warmup_1 {
 		}
 		return front + front + front;
 	}
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
