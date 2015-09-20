@@ -91,19 +91,74 @@ public class Warmup_1Test {
 		assertEquals("ChoChoCho", obj.front3("Chocolate"));
 		assertEquals("abcabcabc", obj.front3("abc"));
 	}
+
+	@Test
+	public void testBackAround() {
+		assertEquals("tcatt", obj.backAround("cat"));
+		assertEquals("oHelloo", obj.backAround("Hello"));
+		assertEquals("aaa", obj.backAround("a"));
+	}
+	
+	@Test
+	public void testOr35() {
+		assertTrue(obj.or35(3));
+		assertTrue(obj.or35(10));
+		assertFalse(obj.or35(8));
+	}
+	
+	@Test
+	public void testFront22() {
+		assertEquals("kikittenki", obj.front22("kitten"));
+		assertEquals("HaHaHa", obj.front22("Ha"));
+		assertEquals("ababcab", obj.front22("abc"));
+	}
+	
+	@Test
+	public void testStartHi() {
+		assertTrue(obj.startHi("hi there"));
+		assertTrue(obj.startHi("hi"));
+		assertFalse(obj.startHi("hello hi"));
+	}
+	
+	@Test
+	public void testIcyHot() {
+		assertTrue(obj.icyHot(120, -1));
+		assertTrue(obj.icyHot(-1, 120));
+		assertFalse(obj.icyHot(2, 120));
+	}
+	
+	@Test
+	public void testIn1020() {
+		assertTrue(obj.in1020(12, 99));
+		assertTrue(obj.in1020(21, 12));
+		assertFalse(obj.in1020(8, 99));
+	}
+	
+	@Test
+	public void testHasTeen() {
+		assertTrue(obj.hasTeen(13, 20, 10));
+		assertTrue(obj.hasTeen(20, 19, 10));
+		assertTrue(obj.hasTeen(20, 10, 13));
+	}
+
+	@Test
+	public void testLoneTeen() {
+		assertTrue(obj.loneTeen(13, 99));
+		assertTrue(obj.loneTeen(21, 19));
+		assertFalse(obj.loneTeen(13, 13));
+	}
+	
+	@Test
+	public void testDelDel() {
+		assertEquals("abc", obj.delDel("adelbc"));
+		assertEquals("aHello", obj.delDel("adelHello"));
+		assertEquals("adedbc", obj.delDel("adedbc"));
+	}
+	
+	@Test
+	public void testMixStart() {
+		assertTrue(obj.mixStart("mix snacks"));
+		assertTrue(obj.mixStart("pix snacks"));
+		assertFalse(obj.mixStart("piz snacks"));
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
