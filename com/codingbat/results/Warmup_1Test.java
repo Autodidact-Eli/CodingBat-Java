@@ -84,6 +84,13 @@ public class Warmup_1Test {
 		assertEquals("a", obj.frontBack("a"));
 		assertEquals("ab", obj.frontBack("ba"));
 	}
+	
+	@Test
+	public void testFront3() {
+		assertEquals("JavJavJav", obj.front3("Java"));
+		assertEquals("ChoChoCho", obj.front3("Chocolate"));
+		assertEquals("abcabcabc", obj.front3("abc"));
+	}
 }
 
 
