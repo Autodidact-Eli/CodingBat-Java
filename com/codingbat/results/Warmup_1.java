@@ -176,6 +176,7 @@ public class Warmup_1 {
 		boolean range2 = (a >= 40 && a <= 50) && (b >= 40 && b <= 50);
 		return range1 || range2;
 	}
+	
 	// TODO: clean this up
 	public int max1020(int a, int b) {
 		boolean aRange = (a >= 10 && a <= 20);
