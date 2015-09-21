@@ -161,4 +161,67 @@ public class Warmup_1Test {
 		assertTrue(obj.mixStart("pix snacks"));
 		assertFalse(obj.mixStart("piz snacks"));
 	}
+	
+	@Test
+	public void testStartOz() {
+		assertEquals("oz", obj.startOz("ozymandias"));
+		assertEquals("z", obj.startOz("bzoo"));
+		assertEquals("o", obj.startOz("oxx"));
+	}
+	
+	@Test
+	public void testIntMax() {
+		assertEquals(3, obj.intMax(1, 2, 3));
+		assertEquals(3, obj.intMax(1, 3, 2));
+		assertEquals(3, obj.intMax(3, 2, 1));
+	}
+	
+	@Test
+	public void testClose10() {
+		assertEquals(8, obj.close10(8, 13));
+		assertEquals(8, obj.close10(13, 8));
+		assertEquals(0, obj.close10(13, 7));
+	}
+	
+	@Test
+	public void testIn3050() {
+		assertTrue(obj.in3050(30, 31));
+		assertFalse(obj.in3050(30, 41));
+		assertTrue(obj.in3050(40, 50));
+	}
+	
+	@Test
+	public void testMax1020() {
+		assertEquals(19, obj.max1020(11, 19));
+		assertEquals(19, obj.max1020(19, 11));
+		assertEquals(11, obj.max1020(11, 9));
+	}
+	
+	@Test
+	public void testStringE() {
+		assertTrue(obj.stringE("Hello"));
+		assertTrue(obj.stringE("Heelle"));
+		assertFalse(obj.stringE("Heelele"));
+	}
+	
+	@Test
+	public void testLastDigit() {
+		assertTrue(obj.lastDigit(7, 17));
+		assertFalse(obj.lastDigit(6, 17));
+		assertTrue(obj.lastDigit(3, 113));
+	}
+	
+	@Test
+	public void testEndUp() {
+		assertEquals("HeLLO", obj.endUp("Hello"));
+		assertEquals("hi thERE", obj.endUp("hi there"));
+		assertEquals("HI", obj.endUp("hi"));
+	}
+	
+	@Test
+	public void testEveryNth() {
+		assertEquals("Mrce", obj.everyNth("Miracle", 2));
+		assertEquals("aceg", obj.everyNth("abcdefg", 2));
+		assertEquals("adg", obj.everyNth("abcdefg", 3));		
+	}
 }
