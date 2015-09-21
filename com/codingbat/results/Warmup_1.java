@@ -1,5 +1,9 @@
 package com.codingbat.results;
 
+/*
+ * TODO: clean up certain methods and add documentation for clarity
+ */
+
 public class Warmup_1 {
 
 	public boolean sleepIn(boolean weekday, boolean vacation) {
