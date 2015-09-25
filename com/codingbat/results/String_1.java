@@ -72,4 +72,85 @@ public class String_1 {
 		String body = str.substring(0, str.length()-last2.length());
 		return last2 + body;
 	}
+
+	public String theEnd(String str, boolean front) {
+		if (front) {
+			return str.substring(0, 1);
+		} else {
+			return str.substring(str.length()-1);
+		}
+	}
+	
+	public String withoutEnd2(String str) {
+		if (str.length() <= 2) return "";
+		return str.substring(1, str.length()-1);
+	}
+
+	public String middleTwo(String str) {
+		if (str.length() == 2) return str;
+		return str.substring((str.length()/2)-1, str.length()/2+1);
+	}
+
+	public boolean endsLy(String str) {
+		// Solution 1
+		if (str.length() < 2) return false; // string can't end with "ly"
+		return str.substring(str.length()-2).equals("ly");
+
+		/* Solution 2 */
+		//if (str.length() < 2) return false;
+		//return str.endsWith("ly");
+	}
+
+	public String nTwice(String str, int n) {
+		return str.substring(0,n) + str.substring(str.length()-n);
+	}
+	
+	// The three if-statements could be combined into one large conditional
+	public String twoChar(String str, int index) {
+		// Index can't be negative
+		if (index < 0) return str.substring(0,2);
+		
+		// Index can't be larger than the string length
+		if (index > str.length()) return str.substring(0,2);
+		
+		// If we didn't have this check, there would be a
+		// StringIndexOutOfBoundsException
+		if (str.length() - index < 2) return str.substring(0,2);
+		
+		return str.substring(index, index+2);
+	}
+
+	public String middleThree(String str) {
+		if (str.length() == 3) return str;
+		return str.substring((str.length()/2)-1,(str.length()/2)+2);
+	}
+
+	public boolean hasBad(String str) {
+		// String can't contain "bad"
+		if (str.length() < 3) return false;
+		
+		// e.g. str is "xba"
+		if (str.length() == 3 && !str.equals("bad")) return false;
+		
+		// e.g. str is "badxx"
+		if (str.length() >= 3 && str.substring(0,3).equals("bad")) return true;
+		
+		// e.g. str is "xbadxx"
+		if (str.length() >= 3 && str.substring(1,4).equals("bad")) return true;
+		
+		return false;
+	}
+	
+	public String atFirst(String str) {
+		// e.g. str is ""
+		if (str.equals("")) return "@@";
+		
+		// e.g. str is "h"
+		if (str.length() < 2) return str + "@";
+		
+		// e.g. str is "hi"
+		if (str.length() == 2) return str;
+		
+		return str.substring(0,2);
+	}
 }

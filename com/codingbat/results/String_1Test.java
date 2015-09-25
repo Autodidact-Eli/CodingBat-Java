@@ -91,4 +91,67 @@ public class String_1Test {
 		assertEquals("vaja", obj.right2("java"));
 		assertEquals("Hi", obj.right2("Hi"));
 	}
+	
+	@Test
+	public void testTheEnd() {
+		assertEquals("H", obj.theEnd("Hello", true));
+		assertEquals("o", obj.theEnd("Hello", false));
+		assertEquals("o", obj.theEnd("oh", true));
+	}
+	
+	@Test
+	public void testWithoutEnd2() {
+		assertEquals("ell", obj.withoutEnd2("Hello"));
+		assertEquals("b", obj.withoutEnd2("abc"));
+		assertEquals("", obj.withoutEnd2("ab"));
+	}
+	
+	@Test
+	public void testMiddleTwo() {
+		assertEquals("ri", obj.middleTwo("string"));
+		assertEquals("od", obj.middleTwo("code"));
+		assertEquals("ct", obj.middleTwo("Practice"));
+	}
+	
+	@Test
+	public void testEndsLy() {
+		assertTrue(obj.endsLy("oddly"));
+		assertFalse(obj.endsLy("y"));
+		assertFalse(obj.endsLy("oddy"));
+	}
+	
+	@Test
+	public void testNTwice() {
+		assertEquals("Helo", obj.nTwice("Hello", 2));
+		assertEquals("Choate", obj.nTwice("Chocolate", 3));
+		assertEquals("Ce", obj.nTwice("Chocolate", 1));
+	}
+	
+	@Test
+	public void testTwoChar() {
+		assertEquals("ja", obj.twoChar("java", 0));
+		assertEquals("va", obj.twoChar("java", 2));
+		assertEquals("ja", obj.twoChar("java", 3));
+	}
+	
+	@Test
+	public void testMiddleThree() {
+		assertEquals("and", obj.middleThree("Candy"));
+		assertEquals("and", obj.middleThree("and"));
+		assertEquals("lvi", obj.middleThree("solving"));
+	}
+	
+	@Test
+	public void testHasBad() {
+		assertTrue(obj.hasBad("badxx"));
+		assertTrue(obj.hasBad("xbadxx"));
+		assertFalse(obj.hasBad("xxbadxx"));
+	}
+	
+	@Test
+	public void testAtFirst() {
+		assertEquals("he", obj.atFirst("hello"));
+		assertEquals("hi", obj.atFirst("hi"));
+		assertEquals("h@", obj.atFirst("h"));
+	}
 }
