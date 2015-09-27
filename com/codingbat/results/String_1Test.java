@@ -154,4 +154,52 @@ public class String_1Test {
 		assertEquals("hi", obj.atFirst("hi"));
 		assertEquals("h@", obj.atFirst("h"));
 	}
+	
+	@Test
+	public void testLastChars() {
+		assertEquals("ls", obj.lastChars("last", "chars"));
+		assertEquals("ya", obj.lastChars("yo", "java"));
+		assertEquals("h@", obj.lastChars("hi", ""));
+	}
+	
+	@Test
+	public void testConCat() {
+		assertEquals("abcat", obj.conCat("abc", "cat"));
+		assertEquals("dogcat", obj.conCat("dog", "cat"));
+		assertEquals("abc", obj.conCat("abc", ""));
+	}
+	
+	@Test
+	public void testLastTwo() {
+		assertEquals("codign", obj.lastTwo("coding"));
+		assertEquals("cta", obj.lastTwo("cat"));
+		assertEquals("ba", obj.lastTwo("ab"));
+	}
+	
+	@Test
+	public void testSeeColor() {
+		assertEquals("red", obj.seeColor("redxx"));
+		assertEquals("", obj.seeColor("xxred"));
+		assertEquals("blue", obj.seeColor("blueTimes"));
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -96,7 +96,7 @@ public class String_1 {
 		if (str.length() < 2) return false; // string can't end with "ly"
 		return str.substring(str.length()-2).equals("ly");
 
-		/* Solution 2 */
+		// Solution 2 
 		//if (str.length() < 2) return false;
 		//return str.endsWith("ly");
 	}
@@ -129,28 +129,111 @@ public class String_1 {
 		// String can't contain "bad"
 		if (str.length() < 3) return false;
 		
-		// e.g. str is "xba"
+		// str is "xba"
 		if (str.length() == 3 && !str.equals("bad")) return false;
 		
-		// e.g. str is "badxx"
+		// str is "badxx"
 		if (str.length() >= 3 && str.substring(0,3).equals("bad")) return true;
 		
-		// e.g. str is "xbadxx"
+		// str is "xbadxx"
 		if (str.length() >= 3 && str.substring(1,4).equals("bad")) return true;
 		
 		return false;
 	}
 	
 	public String atFirst(String str) {
-		// e.g. str is ""
+		// str is ""
 		if (str.equals("")) return "@@";
 		
-		// e.g. str is "h"
+		// str is "h"
 		if (str.length() < 2) return str + "@";
 		
-		// e.g. str is "hi"
+		// str is "hi"
 		if (str.length() == 2) return str;
-		
+
 		return str.substring(0,2);
 	}
+
+	// a.isEmpty() can replace a.equals("")
+	public String lastChars(String a, String b) {
+		// a and b are ""
+		if (a.equals("") && b.equals("")) return "@@";
+
+		// a is ""
+		if (a.equals("") && !b.equals("")) return "@" + b.substring(b.length()-1);
+
+		// b is ""
+		if (!a.equals("") && b.equals("")) return a.substring(0,1) + "@";
+		
+		// return first char of a, and last char of b
+		return a.substring(0, 1) + b.substring(b.length()-1);
+	}
+	
+	public String conCat(String a, String b) {
+		// a and b are ""
+		if (a.equals("") && b.equals("")) return "";
+		
+		// a is ""
+		if (a.equals("") && !b.equals("")) return b;
+		
+		// b is ""
+		if (!a.equals("") && b.equals("")) return a;
+		
+		// if concatenation creates a double-char
+		if (a.substring(a.length()-1).equals(b.substring(0,1))) {
+			return a + b.substring(1);
+		}
+		
+		// return concatenated strings
+		return a + b;
+	}
+
+	public String lastTwo(String str) {
+		if (str.equals("")) return "";
+
+		// lastTwo("a") --> "a"
+		if (str.length() == 1) return str;
+
+		// lastTwo("ab") --> "ba"
+		if (str.length() == 2)
+			return str.substring(str.length()-1) + str.substring(0,1);
+
+		char last = str.charAt(str.length()-1);
+		char oneBeforeLast = str.charAt(str.length()-2);
+		String body = str.substring(0, str.length()-2);
+		return body + last + oneBeforeLast;
+	}
+	
+	public String seeColor(String str) {
+		if (str.length() >= 3 && str.startsWith("red")) return "red";
+		if (str.length() >= 4 && str.startsWith("blue")) return "blue";
+		return "";
+	}
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
