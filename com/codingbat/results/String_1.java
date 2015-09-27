@@ -209,6 +209,18 @@ public class String_1 {
 		if (str.length() >= 4 && str.startsWith("blue")) return "blue";
 		return "";
 	}
+	
+	public boolean frontAgain(String str) {
+		if (str.length() < 2) return false;
+		if (str.length() == 2) return true;
+		
+		String firstTwo = str.substring(0,2);
+		String lastTwo = str.substring(str.length()-2);
+		return firstTwo.equals(lastTwo);
+		
+		// Another solution
+		//return str.startsWith(lastTwo) && str.endsWith(firstTwo);
+	}
 
 
 }

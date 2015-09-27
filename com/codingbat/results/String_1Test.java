@@ -182,6 +182,13 @@ public class String_1Test {
 		assertEquals("", obj.seeColor("xxred"));
 		assertEquals("blue", obj.seeColor("blueTimes"));
 	}
+	
+	@Test
+	public void testFrontAgain() {
+		assertTrue(obj.frontAgain("edited"));
+		assertFalse(obj.frontAgain("edit"));
+		assertTrue(obj.frontAgain("ed"));
+	}
 }
 
 
